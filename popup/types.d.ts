@@ -1,21 +1,23 @@
 export interface Band {
   _id: string
+  id: number
   title: string
   genre: string
   formedIn: string | number
   yearsActive: string
-  label: Label
+  label: string
   lineup: []
   exLineup: []
   country: string
   city: string
   status: string
   lyricsTheme: string
-  albums: []
+  albums: Album[]
   videos: []
   socials: {
     facebook: string
     vk: string
+    bandcamp: string
   }
   photos: string[]
   logoUrl: string
@@ -23,15 +25,25 @@ export interface Band {
   description: string
 }
 
-export interface Label {
+export interface Album {
+  id: number
   title: string
-  country: string
-  email: string
-  address: string
-  phone: string
+  band: Band
+  cover: string
+  type: string
+  genres: string[]
+  tracks: string[]
+  releaseDate: string
+  format: string
+  label: string
+  catalogId: string
+  limitations: number
+  lineup: []
+  description: string
   links: {
     bandcamp: string
-    youtube: string
+    discogs: string
+    yaMusic: string
+    spotify: string
   }
-  logo: string
 }

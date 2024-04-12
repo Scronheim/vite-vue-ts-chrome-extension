@@ -5,7 +5,9 @@ chrome.runtime.onInstalled.addListener(() => {
   // this runs ONE TIME ONLY (unless the user reinstalls your extension)
 });
 
-chrome.tabs.onActivated.addListener(async (tab) => {
-  console.log(tab.tabId);
-  await chrome.tabs.query()
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message === 'getDOM') {
+    sendResponse({})
+  }
+  sendResponse({})
 })

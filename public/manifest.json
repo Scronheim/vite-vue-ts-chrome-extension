@@ -18,5 +18,8 @@
     "tabs",
     "activeTab"
   ],
+  "host_permissions": [
+    "https://www.metal-archives.com/*"
+  ],
   "options_page": "options/index.html"
 }
